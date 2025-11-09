@@ -24,11 +24,10 @@ An Enterprise Architecture is intended to align and coordinate the IT landscape 
 
 3. Non-IT Products: anything else, even if highly IT bound like banks or insurance company, your business process uses the IT only as a means, not the core capability of your organization.
 
-## Why you may not need the EEL
+## Why you may not need the EmELand
 
-If you already have a working Enterprise Architecture and are 
-
+If you already have a working Enterprise Architecture and are satisfied with the insights it provides, then you have already implicitly solved the problem EmELand addresses. There is no benefit gained from changing a working system.
 
 ## Principles
 
-* Automation is non-negitiable
+* Automation is non-negotiable
