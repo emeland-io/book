@@ -1,5 +1,5 @@
 ---
-title: "Phase 3: Offering Capabilities"
+title: "Phase 4: Billing"
 weight: 1
 # bookFlatSection: false
 # bookToc: true
@@ -9,10 +9,5 @@ weight: 1
 # bookSearchExclude: false
 # bookHref: ''
 ---
-# Phase 3: Offering Capabilities
 
-## Capability
-
-## Intent
-
-## Mapping to Running Systems
+# Phase 4: Billing 
