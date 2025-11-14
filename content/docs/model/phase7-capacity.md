@@ -12,6 +12,16 @@ weight: 1
 
 # Phase 7: Capacity
 
+![Capacity Data Model](images/p7-capacity.svg)
+
+### Resource Types
+
+This object defines everything that may be limited and available amount needing be tracked. Examples include anything CPU cores, RAM, drive space, network bandwidth, but also licenses, cooling budget, amortised personal capacity.
+
+### Capacity
+
+The capacity is sorted into three categories: **requested** by a tenant, **provided** by the context, currently **consumed** by the workloads currently running in the context.
+
 ## Ideas
 
 * remaining runway for expansion: What is the limiting factor for further growth and how long will it take current grow of other metrics to be limited by this bottleneck.
