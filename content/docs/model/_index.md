@@ -1,6 +1,6 @@
 ---
-title: "Phase 2: Identity and Access Management (IAM)"
-weight: 1
+#title: "Phase 7: Capacity"
+#weight: 1
 # bookFlatSection: false
 # bookToc: true
 # bookHidden: false
@@ -9,6 +9,3 @@ weight: 1
 # bookSearchExclude: false
 # bookHref: ''
 ---
-
-# Phase 2: Identity and Access Management (IAM)
-

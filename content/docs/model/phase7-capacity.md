@@ -12,7 +12,10 @@ weight: 1
 
 # Phase 7: Capacity
 
-![Capacity Data Model](images/p7-capacity.svg)
+## Object Model
+
+{{< image src="images/p7-capacity.svg" alt="image of the entities of the Capacity Data Model elements" title="Capacity Data Model" loading="lazy" >}}
+
 
 ### Resource Types
 
@@ -21,6 +24,10 @@ This object defines everything that may be limited and available amount needing 
 ### Capacity
 
 The capacity is sorted into three categories: **requested** by a tenant, **provided** by the context, currently **consumed** by the workloads currently running in the context.
+
+## Out of Scope
+
+The capacity model only covers a snapshot of the current requests, capacity and consumption. Any aggregation of use of resources over time is discussed in [Phase 4: Billing](phase4-billing.md)
 
 ## Ideas
 
