@@ -12,7 +12,7 @@ weight: 1
 
 # Phase 2: Identity and Access Management (IAM)
 
-![An entity relationship diagram of the entities in phase-2: OrgUnit, Identity, Group, Binding, RoleSpec, PermissionSpec, Role, Permission](images/p0-contexts.svg)
+![An entity relationship diagram of the entities in phase-2: OrgUnit, Identity, Group, Binding, RoleSpec, PermissionSpec, Role, Permission](images/p2-iam.svg)
 
 ## Points for later extension / diskussion
 
