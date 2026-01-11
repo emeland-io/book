@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https:emeland.gitlab.io/book/'
 languageCode = 'en-us'
 
 title = 'The Book of the Emerging Enterprise Landscape'

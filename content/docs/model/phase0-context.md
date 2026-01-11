@@ -1,5 +1,5 @@
 ---
-title: "Phase 8: Data Catalog"
+title: "Phase 0: Context"
 weight: 1
 # bookFlatSection: false
 # bookToc: true
