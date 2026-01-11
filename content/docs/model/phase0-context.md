@@ -14,4 +14,4 @@ weight: 1
 
 Contexts are the generic glue to structure all other elements within a large enterprise or even super-enterprise landscape.
 
-![An entity relationship diagram of the entity in phase-0: Context](images/p0-contexts.svg)
+![An entity relationship diagram of the entity in phase-0: Context](/docs/model/images/p0-contexts.svg)
