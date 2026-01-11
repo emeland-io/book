@@ -42,3 +42,7 @@ If you already have a working Enterprise Architecture and are satisfied with the
 ## Principles
 
 * Automation is non-negotiable
+
+## Out of scope
+
+ TODO
