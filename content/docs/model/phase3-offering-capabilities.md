@@ -11,7 +11,7 @@ weight: 40
 ---
 # Phase 3: Offering Capabilities
 
-![An entity relationship diagram of the entities in phase-3: Feature, FeatureVersion, Variant, Dependency, ValidValue, Order, OrderItem, BoundValue, Parameter](images/p3-features.svg)
+![An entity relationship diagram of the entities in phase-3: Feature, FeatureVersion, Variant, Dependency, ValidValue, Order, OrderItem, BoundValue, Parameter](/docs/model/images/p3-features.svg)
 
 Offering the capabilities provided by your IT system as Features makes them available for consumption. When a Feature is ordered for use by a customer, it is then tracked as an Order.
 
