@@ -1,6 +1,6 @@
 ---
 title: "Phase 0: Context"
-weight: 1
+weight: 10
 # bookFlatSection: false
 # bookToc: true
 # bookHidden: false
@@ -15,3 +15,5 @@ weight: 1
 Contexts are the generic glue to structure all other elements within a large enterprise or even super-enterprise landscape.
 
 ![An entity relationship diagram of the entity in phase-0: Context](/docs/model/images/p0-contexts.svg)
+
+Contexts are 

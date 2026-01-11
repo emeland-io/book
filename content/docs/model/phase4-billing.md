@@ -1,6 +1,6 @@
 ---
 title: "Phase 4: Billing"
-weight: 1
+weight: 50
 # bookFlatSection: false
 # bookToc: true
 # bookHidden: false

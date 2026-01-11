@@ -1,6 +1,6 @@
 ---
 title: "Phase 3: Offering Capabilities"
-weight: 1
+weight: 40
 # bookFlatSection: false
 # bookToc: true
 # bookHidden: false

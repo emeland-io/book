@@ -1,6 +1,6 @@
 ---
 title: "Phase 5: Managing Risk"
-weight: 1
+weight: 60
 # bookFlatSection: false
 # bookToc: true
 # bookHidden: false
