@@ -14,7 +14,7 @@ weight: 80
 
 ## Object Model
 
-{{< image src="/docs/model/images/p7-capacity.svg" alt="image of the entities of the Capacity Data Model elements" title="Capacity Data Model" loading="lazy" >}}
+![Entity relationship diagram of the entities in phase 7: ResourceType, Request, Capacty](/docs/model/images/p7-capacity.svg)
 
 
 ### Resource Types

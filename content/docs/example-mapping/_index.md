@@ -1,6 +1,6 @@
 ---
 title: "Example Mapping"
-#weight: 1
+weight: 2
 # bookFlatSection: false
 # bookToc: true
 # bookHidden: false
@@ -9,3 +9,7 @@ title: "Example Mapping"
 # bookSearchExclude: false
 # bookHref: ''
 ---
+
+# Realm 2: Example Mapping
+
+OpenAPI Spec in [https://github.com/emeland-io/openapi](https://github.com/emeland-io/openapi)
