@@ -14,6 +14,8 @@ weight: 4
 
 ## Types of Building Blocks
 
+![An overview on how data is collected from external systems, forwarded and processed, then injected into other external systems, using the three types of building blocks: sensors, filters and injectors respectively.](images/emeland-architecture.svg)
+
 - **Sensor**: gathers information from other software components, databases or file based data. Data and its changes are passed on via events to the building blocks that subscribe to the Sensors.
 - **Filter**: registers with one or more other building blocks to receive events on resources seen by those blocks. The filter will then filter, aggregate or annotate the resources in its model. The filter in turn is subscribed to by further building blocks.
 - **Injector**: send information to external systems and other software components to be used in business processes of the enterprise.

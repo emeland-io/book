@@ -16,7 +16,7 @@ weight: 1
 
 All Elements of the abstract models are Reference Objects as defined by the DDD book[^ddd], unless noted otherwise. Therefore each element will have a) an UUID as unique identifier and b) a display name, to help humans identify the element. These to attributes are not shown in the diagrams in this chapter, as they are primarily a technical details. 
 
-See the [Chapter on the example reference](/docs/example-mapping/) for an example on how to map the abstract EmeLand model to a useable data model.
+See the [Chapter on the example mapping](/docs/example-mapping/) for an example on how to map the abstract EmeLand model to a useable data model.
 
 The following sections in this chapter will not reiterate the common elements, but rather focus on the specific aims of each of the phases.
 
