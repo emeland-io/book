@@ -2,7 +2,7 @@
 # cSpell:enable
 
 title: "Common Elements of Model Objects"
-weight: 1
+weight: 10
 # bookFlatSection: false
 # bookToc: true
 # bookHidden: false

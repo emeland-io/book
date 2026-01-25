@@ -1,6 +1,6 @@
 ---
 title: "Phase 2: Identity and Access Management (IAM)"
-weight: 4
+weight: 50
 # bookFlatSection: false
 # bookToc: true
 # bookHidden: false

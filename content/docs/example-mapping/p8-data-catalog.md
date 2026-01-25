@@ -1,6 +1,6 @@
 ---
 title: "Phase 8: Data Catalog"
-weight: 10
+weight: 110
 # bookFlatSection: false
 # bookToc: true
 # bookHidden: false

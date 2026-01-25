@@ -1,6 +1,6 @@
 ---
 title: "Phase 1: Structure"
-weight: 3
+weight: 40
 # bookFlatSection: false
 # bookToc: true
 # bookHidden: false

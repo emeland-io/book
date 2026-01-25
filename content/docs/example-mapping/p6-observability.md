@@ -1,6 +1,6 @@
 ---
 title: "Phase 6: Observability"
-weight: 8
+weight: 90
 # bookFlatSection: false
 # bookToc: true
 # bookHidden: false

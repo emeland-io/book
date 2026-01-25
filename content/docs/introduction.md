@@ -75,6 +75,21 @@ Testing a concept or a protocol / API should always be done through an actual im
 
 The design goal of this implementation is the ability to construct highly complex landscapes form basic building blocks. It does not provide a polished user interface, but is intended to support a maximum in automation for the organisation that deploys it.
 
+## Naming Conventions
+
+|Term | Description |
+|---|---|
+| Resource | Entities of the EmELand model, which represent elements and structure of the enterprise landscape. |
+| Resource Type | The element of the model that represents resources of that type. |
+
+### Type and Object Duality
+
+A number of resource types are structured in a type and object duality (similar to class and object in object oriented programming languages).
+
+The resource types of the type are named with the base name (e.g. `System`, `API`, etc.), the resource type for corresponding object of that type has the name of the base type with the suffix "Instance" attached (i.e. `SystemInstance`, `ApiInstance`, etc.)
+
+Beyond the model, two exceptions to the above rule are introduced by the example mapping: `Node` / `NodeType` and `Finding` / `FindingType`. These resources are not defined by the organization using the model, but rather by the authors of the implementation.
+
 ## Principles
 
 * Automation is non-negotiable
