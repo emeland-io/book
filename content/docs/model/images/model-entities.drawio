@@ -1,9 +1,17 @@
 <mxfile host="65bd71144e">
     <diagram id="CeghGSl0Vjd-nSDSm5pI" name="P0: Context">
-        <mxGraphModel dx="606" dy="423" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="388" dy="537" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
+                <mxCell id="6" style="edgeStyle=none;html=1;" edge="1" parent="1" source="2" target="5">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="is of type" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="6">
+                    <mxGeometry x="0.1035" relative="1" as="geometry">
+                        <mxPoint x="30" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
                 <mxCell id="2" value="Context" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="250" y="190" width="120" height="60" as="geometry"/>
                 </mxCell>
@@ -18,6 +26,9 @@
                     <mxGeometry x="0.515" y="-1" relative="1" as="geometry">
                         <mxPoint x="35" y="-8" as="offset"/>
                     </mxGeometry>
+                </mxCell>
+                <mxCell id="5" value="ContextType" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="250" y="80" width="120" height="60" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
