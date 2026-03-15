@@ -18,9 +18,26 @@ Components and APIs belong to Systems, defining the fundamental building blocks 
 
 ![An entity relationship diagram of the entities in Phase 1: System, API, Component, SystemInstance, ApiInstance, ComponentInstance](../images/p1-structure.svg)
 
+## `System` and `SystemInstance`
+
 A `System` and its contents is the foundational building block of an enterprise IT landscape. The same abstract `System` may be running any number of times and in multiple different contexts. Each separate instance is described by the `SystemInstance` resource
 
+Any number of Systems can be combined in a hierarchy, to model complex systems composed from numerous (sub-)systems. The sub-systems are linked through the use of the Parent relation.
+
+## `Component` and `ComponentInstance`
 A `Component` resource represents any form of executable logic, regardless of the format (e.g. interpreted script, binary executable, container, etc.). It communicates with other components via interfaces represented via `API` resources. The APIs exposed by a component belong to the same system as the component. APIs consumed by an component may either be in the same system or a separate one.
+
+It is important to understand, that `Component` documents intent, not configuration! Consider a commonly used software like the [NGinX network proxy](http://nginx.org). Depending on configuration it may be used a authentication proxy, load balancer, cache or to as a web server, serving static files, and many more use-cases. Each use of the same basic software needs to be modelled as a separate component, potentially in it own (Sub-)System. 
+
+Tracking the exact configuration, that is required to enabled the desired behaviour, is out-of-scope for EmELand. EmELand does not attempt to replace configuration management or deployment tools like [helm](https://helm.sh/) in its `values.yaml`file or the [Open Component Model](https://ocm.software/) (OCM), but rather to aggregate part of their information.
+
+### Optional Components
+
+There are no optional components within a given system. To be valid, all `Components`of a `System`have to be instantiated in a `SystemInstance`.
+
+But the rule set by the model does not force all subsystems to be instantiated for a given system. Thus parts of the overall complex system become optional.
+
+## `API` and `ApiInstance`
 
 An `API` represents a potential communication channel. Multiple technical elements may be part of the same API (i.e. a Kubernetes Service, Kubernetes Ingress resource, a load-balancer, a firewall rule.) The details depend on the mapping and implementation. A potential example is sketched below:
 
@@ -33,6 +50,7 @@ An `API` represents a potential communication channel. Multiple technical elemen
 1. A `System` MUST be versioned. If a given `System` has multiple current versions, a `SystemInstance` MUST indicate which version of the system it belongs to. An `SystemInstance` MAY belong to multiple version of the same System, if this is supported by the mapping and the implementation.
 1. An `API` SHOULD be versioned.
 1. An `Component` SHOULD be versioned
+1. A `System` with a Parent relationship set to another `System` may not be instantiated when that parent `System` is instantiated.
 
 ## Background
 
