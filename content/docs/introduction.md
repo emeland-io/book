@@ -88,7 +88,7 @@ A number of resource types are structured in a type and object duality (similar 
 
 The resource types of the type are named with the base name (e.g. `System`, `API`, etc.), the resource type for corresponding object of that type has the name of the base type with the suffix "Instance" attached (i.e. `SystemInstance`, `ApiInstance`, etc.)
 
-Beyond the model, two exceptions to the above rule are introduced by the example mapping: `Node` / `NodeType` and `Finding` / `FindingType`. These resources are not defined by the organization using the model, but rather by the authors of the implementation.
+Beyond the model, three exceptions to the above rule are introduced by the example mapping: `Node` / `NodeType`, `Finding` / `FindingType`, and `Context` / `ContextType`. These resources are not defined by the organization using the model, but rather by the authors of the implementation.
 
 ## Principles
 

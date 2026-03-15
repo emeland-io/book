@@ -15,4 +15,4 @@ weight: 80
 ![a detailed entity relationship diagram of the risk entities](../images/p5-risk.svg)
 
 
-A finding may have zero or more findClasses it belongs to.
+A finding may have zero or more finding types it belongs to. A finding may potentially only be processed, if the finding type is known to the filter.
