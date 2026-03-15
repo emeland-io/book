@@ -50,7 +50,7 @@ An `API` represents a potential communication channel. Multiple technical elemen
 1. A `System` MUST be versioned. If a given `System` has multiple current versions, a `SystemInstance` MUST indicate which version of the system it belongs to. An `SystemInstance` MAY belong to multiple version of the same System, if this is supported by the mapping and the implementation.
 1. An `API` SHOULD be versioned.
 1. An `Component` SHOULD be versioned
-1. A `System` with a Parent relationship set to another `System` may not be instantiated when that parent `System` is instantiated.
+1. A `System` with a Parent relationship set to another `System` does not require to be instantiated when the parent `System` is instantiated.
 
 ## Background
 
