@@ -18,41 +18,28 @@ weight: 40
 
 Systems and Subsystems are the building blocks from which the overall landscape is constructed. But as EmELand is designed to reduce the amount of manual data entry where possible, there are a number of variants when defining these resources.
 
-The most simple way to define them, is to manually type out the YAML documents or to created the in a Kubernetes cluster, to be read by the Kubernetes sensor.
+The most simple way to define them, is to manually type out the YAML documents or to created as resources in a Kubernetes cluster, to be read by the Kubernetes sensor.
 
-### System Template
+`System` resources can also be ready by parsing software packages (e.g. Helm Charts, OCM packages, RPMs or Debian packages). For these dedicated sensors need to be written, that contain the domain specific knowledge about their respective formats.
 
-But more additional sensors for Helm Charts or OCM packages can analyze existing packages and extract System definitions.
+Subsystems are identified by setting their `parent` field to a reference to another `System` resource. This allows the modelling of tightly coupled complexes that require one another to function.
 
-But the structural information read from packages can be applied in different forms at multiple points in the system landscape. But since system can have only one parent, a separate mechanism is need to create independent, but identical copies of the structure defined by the package.
+Systems are not intended to be place into a single unified relationship tree. There is no "root" `System`. The overall enterprise landscape is created by systems interconnected through APIs and partitioned through contexts.
 
-This can be realized with two separated System definition: the template resource and a rendered resource.
+An abstract System represents a system, of which only the API is known. It is identified by the annotation `emeland.io/p1-system-abstract` (see below for details). This is usually is the case when the API is provided by an entity or organization that is external to the landscape covered by EmELand. Alternatively it may identify a legacy system, which has not be documented within EmELand yet.
 
-The template `System` is marked by the following well known annotations:
+### Well known  Annotations
 
 | **Key** | **Values** | **Description** |
 |:-------:|:----------:|:---------------:|
-| `emeland.io/p1-system-template`     | `true`, `false`    | the resource is a system template when the value is true. If set to false or the annotation is not set, the resource is standard system resource |
 | `emeland.io/p1-system-template-source` | string | An identifying string, e.g. an URL or similar, of the package, that defined a system structure
 | `emeland.io/p1-system-template-artifact-id | UUID | An ID referencing the `Artifact` resource of the package
+| `emeland.io/p1-system-abstract`     | `true`, `false`    | If set to true, the system is abstract. If set to false, or the annotation is absent, the resource represents a normal system. |
 
-The resulting "rendered" `System` is marked by the following well known annotations:
+### Rules
 
-| **Key** | **Values** | **Description** |
-|:-------:|:----------:|:---------------:|
-| `emeland.io/p1-system-rendered-from`     | UUID    | Id of the template `System` that this `System` is rendered from.
-
-The elements of the system (`API`, `Component`) must not be re-specified in the rendered `System`. A visualization should render the elements to provider better understanding to human observer.
-
-### Abstract System
-
-An abstract System represents an external system, of which only the API is known. It is identified by the following well known annotations:
-
-| **Key** | **Values** | **Description** |
-|:-------:|:----------:|:---------------:|
-| `emeland.io/p1-system-abstract`     | `true`, `false`    | the resource is a system template when the value is true. If set to false or the annotation is not set, the resource is standard system |
-
-An abstract ´System` must not have any `Component` resources linked to it.
+- An abstract ´System` must not have any `Component` resources linked to it. Only APIs are permitted.
+- Either all components and APIs of a system must be deployed at the same time, or none at all.
 
 ## Component
 
@@ -60,8 +47,20 @@ The Component, the same as the API, have their own version. This allows Componen
 
 ## API
 
+The API represents any form of communication channel between `Component` resources.
+
 ## SystemInstance
 
 ## ComponentInstance
 
 ## ApiInstance
+
+## Use Cases
+
+This is a list of use cased, used to describe specific setups and how they are modelled in EmELand. They where used to validate the model, but are placed here to help understanding how the model works.
+
+### Deploy from a helm chart.
+
+* A helm chart is parsed to extract the `System`, `API`, and `Component` information. All resources are marked as templates
+* Any optional components are grouped into one or more sub-systems, to ensure the the rule, that either all elements of a system must be deployed or none at all.
+* the template is deployed. `SystemInstance`, `ApiInstance` and `ComponentInstance` resources are created. They each point to the 
