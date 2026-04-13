@@ -24,12 +24,17 @@ A `System` and its contents is the foundational building block of an enterprise 
 
 Any number of Systems can be combined in a hierarchy, to model complex systems composed from numerous (sub-)systems. The sub-systems are linked through the use of the Parent relation.
 
+For comparison, consider this somewhat more complex complete system of a [CQRS-Application](https://martinfowler.com/bliki/CQRS.html)
+
+On one side the view of the connected system instances:
+![a diagramm of the system instaces of a generic CQRS application](../images/p1_complex_system_instance_view.svg)
+
 ## `Component` and `ComponentInstance`
 A `Component` resource represents any form of executable logic, regardless of the format (e.g. interpreted script, binary executable, container, etc.). It communicates with other components via interfaces represented via `API` resources. The APIs exposed by a component belong to the same system as the component. APIs consumed by an component may either be in the same system or a separate one.
 
 It is important to understand, that `Component` documents intent, not configuration! Consider a commonly used software like the [NGinX network proxy](http://nginx.org). Depending on configuration it may be used a authentication proxy, load balancer, cache or to as a web server, serving static files, and many more use-cases. Each use of the same basic software needs to be modelled as a separate component, potentially in it own (Sub-)System. 
 
-Tracking the exact configuration, that is required to enabled the desired behaviour, is out-of-scope for EmELand. EmELand does not attempt to replace configuration management or deployment tools like [helm](https://helm.sh/) in its `values.yaml`file or the [Open Component Model](https://ocm.software/) (OCM), but rather to aggregate part of their information.
+Tracking the exact configuration, that is required to enabled the desired behavior, is out-of-scope for EmELand. EmELand does not attempt to replace configuration management or deployment tools like [helm](https://helm.sh/) in its `values.yaml`file or the [Open Component Model](https://ocm.software/) (OCM), but rather to aggregate part of their information.
 
 ### Optional Components
 
@@ -54,10 +59,17 @@ An `API` represents a potential communication channel. Multiple technical elemen
 
 ## Background
 
-Use the C4 architecture model: a system having (software) components and interacting via APIs with the outside world.
+The EmELand model is based on ideas from the C4 architecture model: a system having (software) components and interacting via APIs with the outside world.  For more information on C4 see its definition on [c4mode.com](https://c4model.com/). For more tools able to process C4 model information, check out [c4model.info](https://c4model.info/).
+
+As EmELand is aimed to support managing complex IT landscapes, not develop software or software architectures, only the two top most layers are mapped into EmELand to describe the structure of the IT landscape.
 
 ### System Context
+
+The top level diagram of the C4 model ist the **System Context**. It documents how users with the elements of the system to generate value.
+
 ### Containers
+
+"Containers" in the C4 model are not the same as OCI containers, but rather self-contained elements of code that can be executed to provide a given function. It not only allows the naming of software artifacts that are utilized to provide a certain functionality, but also which of these containers communicate with each other.
 
 ### Why not the rest?
 
@@ -65,13 +77,15 @@ The C4 model has two further layers: Components and Code.
 
 You may choose to use these other layers of the C4 model. But they are not as relevant for the enterprise landscape. You may also have a different method of designing and modelling software architecture.
 
-Much more relevant is the fact that you may not have this information, if you are using proprietary software. A software vendor may even try to keep you from discovering the C4 containers, e.g. in hardware appliances. But in order to ensure control over the communication intersection (TODO: ref, definition) of your overall landscape, you must force vendors to give you this information.
+Much more relevant is the fact that you may not have this information, if you are using proprietary software. A software vendor may even try to keep you from discovering the C4 containers, e.g. in hardware appliances. But in order to ensure control over the communication intersection  of your overall landscape, you must force vendors to give you this information.
 
 ## Using the information
 
 ### Generate the Communication Intersection
 
 The information described in the resources of phase 1 allows the easy generation of a set of APIs, and thus communication relationships, which connect the components in two sets of contexts. This is the basis for a number of thread modelling and compliance applications.
+
+### identity 
 
 ## Ares of further Research
 
