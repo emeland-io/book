@@ -29,6 +29,13 @@ For comparison, consider this somewhat more complex complete system of a [CQRS-A
 On one side the view of the connected system instances:
 ![a diagramm of the system instaces of a generic CQRS application](../images/p1_complex_system_instance_view.svg)
 
+The instances detail the actual communication relationships between the components. They form the complete system landscape, as it is assembled when the individual systems are instantiated. And each API must have exactly one component that provides it and zero or more components that consume it. 
+The only exceptions are abstract systems, that form a black box: they only document the APIs that they provide, not their internal makeup.
+
+The other view is the list of systems. ![a diagramm of the system building blocks of a generic CQRS application](../images/p1_complex_system_system_view.svg)
+
+They define the building blocks from which the system landscape is assembled.
+
 ## `Component` and `ComponentInstance`
 A `Component` resource represents any form of executable logic, regardless of the format (e.g. interpreted script, binary executable, container, etc.). It communicates with other components via interfaces represented via `API` resources. The APIs exposed by a component belong to the same system as the component. APIs consumed by an component may either be in the same system or a separate one.
 
@@ -83,11 +90,13 @@ Much more relevant is the fact that you may not have this information, if you ar
 
 ### Generate the Communication Intersection
 
-The information described in the resources of phase 1 allows the easy generation of a set of APIs, and thus communication relationships, which connect the components in two sets of contexts. This is the basis for a number of thread modelling and compliance applications.
+The information described in the resources of phase 1 allows the easy generation of a list of APIs, and thus communication relationships, which connect the components in two sets of contexts. This is the basis for a number of thread modelling and compliance applications.
 
-### identity 
+### Identity 
 
-## Ares of further Research
+By auto-discovering the running instances and mapping them to the abstract definitions an identity can be assigned, which in turn allows the direct addressing  of the instance, when analyzing deviations between plan and reality.
+
+## Areas of further Research
 
 ### Parent Relation for `SystemInstance`
 
