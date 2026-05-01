@@ -12,6 +12,13 @@ weight: 60
 
 # Phase 5: Managing Risk
 
+![A simplified entity relationship diagram of the entities in phase 5: Finding, FindingType, Product, Version, Vulnerability](/docs/model/images/p5-risk.svg)
+## Why is there no contract Resource?
+
+EmELand provides technical data and information to support IT management. It does not provide support for the actual business operations. A contract is probably the resource type most central to organizing business processes, and thus out-of-scope for EmELand.
+
+It may be handled by the software systems with which EmELand is interfaced or integrated. But it is not part of the EmELand model.
+
 ## Where is all of that software coming from?
 
 ## Other Formats
