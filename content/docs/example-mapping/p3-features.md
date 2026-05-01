@@ -1,5 +1,5 @@
 ---
-title: "Phase 3: Features"
+title: "Phase 3: Capabilities"
 weight: 60
 # bookFlatSection: false
 # bookToc: true
@@ -10,6 +10,6 @@ weight: 60
 # bookHref: ''
 ---
 
-# Phase 3: Features
+# Phase 3: Capabilities
 
-![a detailed entity relationship diagram of the features entities](../images/p3-features.svg)
+![a detailed entity relationship diagram of the capabilities entities](../images/p3-features.svg)
