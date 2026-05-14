@@ -12,5 +12,7 @@ weight: 90
 
 # Phase 8: Data Catalog
 
+![A simplified entity relationship diagram of the entities in phase 8: Artifact, Artifact Instance](../images/p8-data-catalog.svg)
+
 * What data artifacts do we manage an where are copies of them stored?
 * What are the metadata elements that govern the (physical) access to the data access?
