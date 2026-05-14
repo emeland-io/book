@@ -13,3 +13,25 @@ weight: 60
 # Phase 3: Capabilities
 
 ![a detailed entity relationship diagram of the capabilities entities](../images/p3-capabilities.svg)
+
+## Intent
+
+### Capability
+
+#### CapabilityVersion
+
+#### Variant
+
+##### Dependency
+
+### Parameter
+
+#### ValidValue
+
+## Reification
+
+### Order
+
+### OrderItem
+
+#### BoundValue
