@@ -88,6 +88,6 @@ The OrderItem defines the list Capabilities selected, as well as specific values
 
 The Order Items can be referenced by [System Instances](phase1-system-structure/#system-and-systeminstance) when fulfilling the order does actually creates a running systems. System Instances that hold multiple orders or tenants to which orders belong, should not be marked as belonging to that order, but rather an original order to provide that multi-tenant system.
 
-The actual implementation must also keep track of the (Contexts)[phase0-context] in which the order item is fulfilled. This will set a number of parameters like the physical (or logical) location, the capacity or regulatory domains.
+The actual implementation must also keep track of the [Contexts](phase0-context.md) in which the order item is fulfilled. This will set a number of parameters like the physical (or logical) location, the capacity or regulatory domains.
 
 Selection of the context can be dependent on a number factors, but the Org Unit that issued the Order is usually among them.

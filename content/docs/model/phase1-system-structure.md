@@ -45,9 +45,9 @@ Tracking the exact configuration, that is required to enabled the desired behavi
 
 ### Optional Components
 
-There are no optional components within a given system. To be valid, all `Components`of a `System`have to be instantiated in a `SystemInstance`.
+There are no optional components within a given system. To be valid, all `Components`of a `System` have to be instantiated in a `SystemInstance`. This rule does not apply to sub-systems, neither directly nor transitively.
 
-But the rule set by the model does not force all subsystems to be instantiated for a given system. Thus parts of the overall complex system become optional.
+Instead, sub-system are explicitly intended to be used to model optional elements of the overall landscape or greater system. An element of the the landscape can be skipped, by simply not instantiating the pertaining sub-system.
 
 ## `API` and `ApiInstance`
 
@@ -59,7 +59,7 @@ An `API` represents a potential communication channel. Multiple technical elemen
 ## Rules
 
 1. Every `ComponentInstance` SHOULD have a context defined.
-1. A `System` MUST be versioned. If a given `System` has multiple current versions, a `SystemInstance` MUST indicate which version of the system it belongs to. An `SystemInstance` MAY belong to multiple version of the same System, if this is supported by the mapping and the implementation.
+1. A `System` MUST be versioned. If a given `System` has multiple current versions, a `SystemInstance` MUST indicate which version of the system it belongs to. An `SystemInstance` MAY belong to additional version of the same System, if this is supported by the internal mapping and the implementation that manages the model.
 1. An `API` SHOULD be versioned.
 1. An `Component` SHOULD be versioned
 1. A `System` with a Parent relationship set to another `System` does not require to be instantiated when the parent `System` is instantiated.
@@ -72,7 +72,7 @@ As EmELand is aimed to support managing complex IT landscapes, not develop softw
 
 ### System Context
 
-The top level diagram of the C4 model ist the **System Context**. It documents how users with the elements of the system to generate value.
+The top level diagram of the C4 model ist the **System Context**. It documents how users interact with the elements of the system to generate value.
 
 ### Containers
 
