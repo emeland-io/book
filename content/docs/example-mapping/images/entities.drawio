@@ -2428,8 +2428,8 @@
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="5cegBPpoV2QM3HW2A3MI-1" value="ResourceType" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="260" y="180" width="210" height="180" as="geometry"/>
+                <mxCell id="5cegBPpoV2QM3HW2A3MI-1" value="CapacityResourceType" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="260" y="180" width="280" height="180" as="geometry"/>
                 </mxCell>
                 <mxCell id="5cegBPpoV2QM3HW2A3MI-2" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;" parent="5cegBPpoV2QM3HW2A3MI-1" vertex="1">
                     <mxGeometry y="30" width="210" height="30" as="geometry"/>
@@ -2439,9 +2439,9 @@
                         <mxRectangle width="30" height="30" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="5cegBPpoV2QM3HW2A3MI-4" value="ResourceTypeID" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;whiteSpace=wrap;html=1;" parent="5cegBPpoV2QM3HW2A3MI-2" vertex="1">
-                    <mxGeometry x="30" width="180" height="30" as="geometry">
-                        <mxRectangle width="180" height="30" as="alternateBounds"/>
+                <mxCell id="5cegBPpoV2QM3HW2A3MI-4" value="CapacityResourceTypeID" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;whiteSpace=wrap;html=1;" parent="5cegBPpoV2QM3HW2A3MI-2" vertex="1">
+                    <mxGeometry x="30" width="250" height="30" as="geometry">
+                        <mxRectangle width="250" height="30" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="5cegBPpoV2QM3HW2A3MI-5" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="5cegBPpoV2QM3HW2A3MI-1" vertex="1">
@@ -2497,7 +2497,7 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="5cegBPpoV2QM3HW2A3MI-14" value="Capacity" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;" parent="1" vertex="1">
-                    <mxGeometry y="400" width="320" height="240" as="geometry"/>
+                    <mxGeometry y="400" width="320" height="270" as="geometry"/>
                 </mxCell>
                 <mxCell id="5cegBPpoV2QM3HW2A3MI-15" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;" parent="5cegBPpoV2QM3HW2A3MI-14" vertex="1">
                     <mxGeometry y="30" width="320" height="30" as="geometry"/>
@@ -2546,7 +2546,7 @@
                         <mxRectangle width="30" height="30" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="5cegBPpoV2QM3HW2A3MI-36" value="Type: ResourceType" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;" parent="5cegBPpoV2QM3HW2A3MI-34" vertex="1">
+                <mxCell id="5cegBPpoV2QM3HW2A3MI-36" value="Type: CapacityResourceType" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;" parent="5cegBPpoV2QM3HW2A3MI-34" vertex="1">
                     <mxGeometry x="30" width="290" height="30" as="geometry">
                         <mxRectangle width="290" height="30" as="alternateBounds"/>
                     </mxGeometry>
@@ -2564,8 +2564,21 @@
                         <mxRectangle width="290" height="30" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="V7A8-A_0xaFFGB4o213i-18" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="5cegBPpoV2QM3HW2A3MI-14" vertex="1">
+                <mxCell id="p7-cap-amount-row" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="5cegBPpoV2QM3HW2A3MI-14" vertex="1">
                     <mxGeometry y="180" width="320" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="p7-cap-amount-pk" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;" parent="p7-cap-amount-row" vertex="1">
+                    <mxGeometry width="30" height="30" as="geometry">
+                        <mxRectangle width="30" height="30" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="p7-cap-amount-val" value="Amount: non-negative decimal" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;" parent="p7-cap-amount-row" vertex="1">
+                    <mxGeometry x="30" width="290" height="30" as="geometry">
+                        <mxRectangle width="290" height="30" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="V7A8-A_0xaFFGB4o213i-18" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="5cegBPpoV2QM3HW2A3MI-14" vertex="1">
+                    <mxGeometry y="210" width="320" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="V7A8-A_0xaFFGB4o213i-19" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;" parent="V7A8-A_0xaFFGB4o213i-18" vertex="1">
                     <mxGeometry width="30" height="30" as="geometry">
@@ -2578,7 +2591,7 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="5cegBPpoV2QM3HW2A3MI-24" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="5cegBPpoV2QM3HW2A3MI-14" vertex="1">
-                    <mxGeometry y="210" width="320" height="30" as="geometry"/>
+                    <mxGeometry y="240" width="320" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="5cegBPpoV2QM3HW2A3MI-25" value="" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;" parent="5cegBPpoV2QM3HW2A3MI-24" vertex="1">
                     <mxGeometry width="30" height="30" as="geometry">
@@ -2729,7 +2742,7 @@
                         <mxRectangle width="30" height="30" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="9i6aMTW7a2q15J5qmBZI-13" value="Type: ResourceType" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;" parent="9i6aMTW7a2q15J5qmBZI-11" vertex="1">
+                <mxCell id="9i6aMTW7a2q15J5qmBZI-13" value="Type: CapacityResourceType" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;" parent="9i6aMTW7a2q15J5qmBZI-11" vertex="1">
                     <mxGeometry x="30" width="290" height="30" as="geometry">
                         <mxRectangle width="290" height="30" as="alternateBounds"/>
                     </mxGeometry>
