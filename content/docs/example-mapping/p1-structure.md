@@ -32,13 +32,13 @@ An abstract System represents a system, of which only the API is known. It is id
 
 | **Key** | **Values** | **Description** |
 |:-------:|:----------:|:---------------:|
-| `emeland.io/p1-system-template-source` | string | An identifying string, e.g. an URL or similar, of the package, that defined a system structure
-| `emeland.io/p1-system-template-artifact-id | UUID | An ID referencing the `Artifact` resource of the package
+| `emeland.io/p1-system-template-source` | string | An identifying string, e.g. an URL or similar, of the package, that defined a system structure |
+| `emeland.io/p1-system-template-artifact-id` | UUID | An ID referencing the `Artifact` resource of the package |
 | `emeland.io/p1-system-abstract`     | `true`, `false`    | If set to true, the system is abstract. If set to false, or the annotation is absent, the resource represents a normal system. |
 
 ### Rules
 
-- An abstract ´System` must not have any `Component` resources linked to it. Only APIs are permitted.
+- An abstract `System` must not have any `Component` resources linked to it. Only APIs are permitted.
 - Either all components and APIs of a system must be deployed at the same time, or none at all.
 
 ## Component
@@ -57,10 +57,10 @@ The API represents any form of communication channel between `Component` resourc
 
 ## Use Cases
 
-This is a list of use cased, used to describe specific setups and how they are modelled in EmELand. They where used to validate the model, but are placed here to help understanding how the model works.
+This is a list of use cases, to sketch specific setups and how they are potentially modelled in EmELand. They where used to validate the model, but are placed here to help understanding how the model works.
 
 ### Deploy from a helm chart.
 
-* A helm chart is parsed to extract the `System`, `API`, and `Component` information. All resources are marked as templates
+* A helm chart is parsed to extract the `System`, `API`, and `Component` information. This information can either be placed into a central system repository or put as Kubernetes Resources into a separate Helm Chart, so that it can be referenced by any future `SystemInstance` resources.
 * Any optional components are grouped into one or more sub-systems, to ensure the the rule, that either all elements of a system must be deployed or none at all.
-* the template is deployed. `SystemInstance`, `ApiInstance` and `ComponentInstance` resources are created. They each point to the 
+* the template is deployed. `SystemInstance`, `ApiInstance` and `ComponentInstance` resources are created by the [modelsrv-k8s-sensor](https://github.com/emeland-io/modelsrv-k8s-sensor). The the Kubernetes resources are checked for annotations that point from the Kubernetes Resources to the corresponding Emeland resources (e.g. a `Deployment` or `StatefulSet` representing a `ComponentInstances` in EmELand should carry an annotation to point to the correct `Component` definition as well as the relevant `SystemInstance`. See the documentation of the `modelsrv-k8s-sensor` for pre-defined `FindingTypes` and well known K8s annotations.)

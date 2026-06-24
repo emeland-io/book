@@ -14,12 +14,12 @@ weight: 80
 
 ## Object Model
 
-![Entity relationship diagram of the entities in phase 7: ResourceType, Request, Capacty](/docs/model/images/p7-capacity.svg)
+![Entity relationship diagram of the entities in phase 7: ResourceType, Request, Capacty](../images/p7-capacity.svg)
 
 
 ### Resource Types
 
-This object defines everything that may be limited and available amount needing be tracked. Examples include anything CPU cores, RAM, drive space, network bandwidth, but also licenses, cooling budget, amortised personal capacity.
+This object defines everything that may be limited and available amount needing be tracked. Examples include anything CPU cores, RAM, drive space, network bandwidth, but also licenses, cooling budget, amortized personal capacity.
 
 ### Capacity
 
