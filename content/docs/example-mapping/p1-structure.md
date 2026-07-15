@@ -55,6 +55,70 @@ The API represents any form of communication channel between `Component` resourc
 
 ## ApiInstance
 
+An `ApiInstance` represents a deployed API endpoint. Well-known `emeland.io/endpoint.*` annotation keys declare where that instance is reachable on the network so external tooling (for example the certprobe service) can perform synthetic HTTP/TLS checks.
+
+These annotations apply only to `ApiInstance` resources. `SystemInstance` carries deployment metadata only; `API` is a type/spec definition, not a deployed endpoint.
+
+Annotation values are stored as `map[string]string` in the model and `{ key, value }` objects on the query API. Values MUST be flat UTF-8 strings — nested YAML maps under `spec.annotations` are stringified by the file sensor and MUST NOT be used.
+
+### Well known Annotations
+
+| **Key** | **Required** | **Values** | **Description** |
+|:-------:|:------------:|:----------:|:---------------:|
+| `emeland.io/endpoint.protocol` | yes | `http`, `https` | URL scheme |
+| `emeland.io/endpoint.host` | yes | string | Hostname or IP. An `ApiInstance` without this key is not a probe target. |
+| `emeland.io/endpoint.port` | no | string | TCP port (for example `443`). MUST be quoted in YAML when numeric. |
+| `emeland.io/endpoint.path` | no | string | HTTP path (for example `/api/v1/health`). MUST start with `/`; a leading slash is added if missing. |
+
+#### Defaults
+
+When optional keys are omitted:
+
+| **Key** | **Default** |
+|:-------:|:-----------:|
+| `emeland.io/endpoint.port` | `443` if protocol is `https`; `80` if `http` |
+| `emeland.io/endpoint.path` | `/` |
+
+#### URL construction
+
+The probe URL is built as:
+
+```
+{protocol}://{host}:{port}{path}
+```
+
+List and detail API responses include a reference URI pointing at the resource in the EmELand catalog (for example `https://emeland.local/v1/landscape/api-instances/{uuid}`). That URI is not the live service endpoint and MUST NOT be used as a probe target.
+
+#### Certificate metadata
+
+Do not declare certificate expiry or issuer in `ApiInstance` annotations for v1. The certprobe service discovers certificate state live via TLS and exposes metrics (for example `certprobe_cert_remaining_seconds`).
+
+#### Example
+
+```yaml
+version: emeland.io/v1
+kind: ApiInstance
+spec:
+  apiInstanceId: "88888888-0000-4000-8000-000000000001"
+  displayName: "Payments API (prod EU)"
+  api: "aaaaaaaa-0000-4000-8000-000000000001"
+  systemInstance: "77777777-0000-4000-8000-000000000102"
+  annotations:
+    env: prod
+    emeland.io/endpoint.protocol: https
+    emeland.io/endpoint.host: payments.prod.eu.example.com
+    emeland.io/endpoint.port: "443"
+    emeland.io/endpoint.path: /api/v1/health
+```
+
+#### Out of scope
+
+The following MUST NOT be used as endpoint annotation keys in v1:
+
+- `cert.notAfter`, `cert.expires`, `cert.issuer`, or similar certificate inventory keys
+- Nested YAML structures under `annotations` (use flat keys or a single JSON string value)
+- Probe URLs on resource types other than `ApiInstance`
+
 ## Use Cases
 
 This is a list of use cased, used to describe specific setups and how they are modelled in EmELand. They where used to validate the model, but are placed here to help understanding how the model works.

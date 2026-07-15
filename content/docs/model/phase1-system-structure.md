@@ -55,6 +55,7 @@ An `API` represents a potential communication channel. Multiple technical elemen
 
 ![a 3-step example on how an API resource in the EmELand model can hide a lot of complexity: abstract model, detailed model, specific instances when model is deployed in the real world](../images/api-example.svg)
 
+An `ApiInstance` may carry well-known `emeland.io/endpoint.*` annotations that declare where the deployed API is reachable on the network. See [Phase 1: Structure — ApiInstance](/docs/example-mapping/p1-structure/#apiinstance) in the example mapping for the annotation registry, URL construction rules, and worked example.
 
 ## Rules
 
