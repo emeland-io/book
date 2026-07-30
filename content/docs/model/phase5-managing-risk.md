@@ -13,6 +13,7 @@ weight: 60
 # Phase 5: Managing Risk
 
 ![A simplified entity relationship diagram of the entities in phase 5: Finding, FindingType, Product, Version, Vulnerability](../images/p5-risk.svg)
+
 ## Why is there no contract Resource?
 
 EmELand provides technical data and information to support IT management. It does not provide support for the actual business operations. A contract is probably the resource type most central to organizing business processes, and thus out-of-scope for EmELand.
@@ -29,10 +30,10 @@ SPDX is a Software Bill of Material (SBOM) format, originally focussed on tracki
 
 EmELand is focussed on gathering information on the currently running enterprise IT Landscape. Thus it primarily supports answering the following questions:
 
-- **Providors / Vendors**: Who delivered the software? And do we have an unbroken chain of custody, so that we can ensure that the code we are executing is the same as the code that got delivered? Or rather the code that was published?
+- **Providers / Vendors**: Who delivered the software? And do we have an unbroken chain of custody, so that we can ensure that the code we are executing is the same as the code that got delivered? Or rather the code that was published?
 
-- **Products / Packages**: Software artifacts are seldomly delivery individually by themselves. Technically they are usually part of a package, consisting of the executable code, documents, default configuration, etc. Also they are legally part of a product, which is linked to a license. To which product version does an artifact belong? Do we have a valid license for executing that artifact?
+- **Products / Packages**: Software artifacts are seldom delivery individually by themselves. Technically they are usually part of a package, consisting of the executable code, documents, default configuration, etc. Also they are legally part of a product, which is linked to a license. To which product version does an artifact belong? Do we have a valid license for executing that artifact?
 
 - **Vulnerabilities / Updates**: Are there any known vulnerabilities for the artifact? How about the product version? Any Updates available, that possibly fix these vulnerabilities
 
-Therefore, some of the details of licensing contracts and origins of vulnerabilities are out of scope. Instead EmELand only tracks the used software artifacts, and how they came to be present for execution. In addition, EmELand keeps information where copies of a given artefact are available, in order to support data logistics (the right artifact, at the right location, at the right time).
+Therefore, some of the details of licensing contracts and origins of vulnerabilities are out of scope. Instead EmELand only tracks the used software artifacts, and how they came to be present for execution. In addition, EmELand keeps information where copies of a given artifact are available, in order to support data logistics (the right artifact, at the right location, at the right time).

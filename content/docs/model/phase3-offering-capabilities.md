@@ -15,13 +15,13 @@ weight: 40
 
 Offering the capabilities provided by your IT system makes them available for consumption. When a Capability is ordered for use by a customer, it is then tracked as an Order.
 
-Capabilities describe individual elements that can be ordered by customers. The customer may be external, i.e.  paying customer that purchase your service. Or they may be internal to your organization, e.g. a different department than the one offering the service. Capabilities can and should also hide the complexity of the **HOW** from customer, by offering a pre-defined set of capabilities.
+Capabilities describe individual elements that can be ordered by customers. The customer may be external, i.e. paying customer that purchase your service. Or they may be internal to your organization, e.g. a different department than the one offering the service. Capabilities can and should also hide the complexity of the **HOW** from customer, by offering a pre-defined set of capabilities.
 
 When Capabilities are offered to external customers, they are an deliverable artifact of classical product management: Something you want to sell. But they also help structure the follow-up question: *what is needed to provide that product to the customer?* And then internally the question: *what do we need to provide these elements?*
 
 *Example: You offer dedicated mail servers as a service (in contrast to integrated services like GMail). One such service instance needs the actual mail server. But dependent on the maximum number of concurrent users it will also need a number of support services and components. In addition it always requires various elements like storage budgets and network capabilities, e.g. DNS entries, IP-address spaces, and bandwidth allocations. All of these elements are represented as Capabilities. Anything from sets of instances of the actual server software, running parallel for scaling and high availability, down to individual database records representing firewall rules or DNS name records.*
 
-A collection of Capabilities is needed to provide the end product. To define this, Capabilities have dependencies. These form a directed acyclic graph of Capabilities that need to be available and functioning for the end production to be available for use by the customer.
+A collection of Capabilities is needed to provide the end product. To define this, Capabilities have dependencies. These form a directed acyclic graph of Capabilities that need to be available and functioning for the end product to be available for use by the customer.
 
 Capabilities also have Parameters that serve three purposes:
 
@@ -31,7 +31,7 @@ Capabilities also have Parameters that serve three purposes:
 
 The Parameters define these aspects and metrics and define a set of valid values. Each Capability then offers these values of the Parameters, potentially as restricted subset. 
 
-Ordering Capabilities may or may not involve a financial transaction, but that is a business process, which is beyond the scope of EmELand. EmELand only tracks what a valid order consist of, and if there are components of the landscape that only exist becaus of an order. This makes it possible to establish a reason for being for each element of the overall IT landscape. And every thing that has no documented reason for being should be a candidate for either deletion or at least scrutiny by the operations team. Or the CISO, Controlling or Internal Revision, depending on the style of your organization.
+Ordering Capabilities may or may not involve a financial transaction, but that is a business process, which is beyond the scope of EmELand. EmELand only tracks what a valid order consist of, and if there are components of the landscape that only exist because of an order. This makes it possible to establish a reason for being for each element of the overall IT landscape. And every thing that has no documented reason for being should be a candidate for either deletion or at least scrutiny by the operations team. Or the CISO, Controlling or Internal Revision, depending on the style of your organization.
 
 ## Intent
 
@@ -76,7 +76,7 @@ Only when a capability is ordered, will it become real and provide value to the 
 
 ### Order
 
-Tracks the Capabilities ordered by an OrgUnit. The existence of an entity of this type represents that all organizational and commercial processes have been completed and the the landscape should provide this value to the OrgUnit that ordered it.
+Tracks the Capabilities ordered by an OrgUnit. The existence of an entity of this type represents that all organizational and commercial processes have been completed and the landscape should provide this value to the OrgUnit that ordered it.
 
 ### Order Item
 

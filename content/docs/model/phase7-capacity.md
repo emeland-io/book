@@ -14,12 +14,12 @@ weight: 80
 
 ## Object Model
 
-![Entity relationship diagram of the entities in phase 7: ResourceType, Request, Capacty](../images/p7-capacity.svg)
+![Entity relationship diagram of the entities in phase 7: ResourceType, Request, Capacity](../images/p7-capacity.svg)
 
 
 ### Resource Types
 
-This object defines everything that may be limited and available amount needing be tracked. Examples include anything CPU cores, RAM, drive space, network bandwidth, but also licenses, cooling budget, amortized personal capacity.
+This object defines everything that may be limited and available amount needing be tracked. Examples include anything CPU cores, RAM, drive space, network bandwidth, but also licenses, cooling budget, amortized personnel capacity.
 
 ### Capacity
 
@@ -31,5 +31,5 @@ The capacity model only covers a snapshot of the current requests, capacity and 
 
 ## Ideas
 
-* remaining runway for expansion: What is the limiting factor for further growth and how long will it take current grow of other metrics to be limited by this bottleneck.
+* remaining runway for expansion: What is the limiting factor for further growth and how long will it take current growth of other metrics to be limited by this bottleneck.
   *E.g How long will it take for our current colocation site to be full, if buy new hardware at the same rate as the last quarter / the last year?*

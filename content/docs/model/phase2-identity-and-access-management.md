@@ -21,7 +21,7 @@ The resources for identity and access management cover three areas, which are ti
 
 - **Bindings** are used to links identities and groups with roles.
 
-**Note:** Typically bindings consist of three fields: subject (the entity or collections of entities to which the permission is granted), verb (the operation or permission which is allowed), and the object (the resource, data or system for which the permission is granted to the subject). Currently the EmELand abstract model does not cover how the object of a binding is specified. This must be defined by the either the mapping or be implmentation specific. This may change in the future.
+**Note:** Typically bindings consist of three fields: subject (the entity or collections of entities to which the permission is granted), verb (the operation or permission which is allowed), and the object (the resource, data or system for which the permission is granted to the subject). Currently the EmELand abstract model does not cover how the object of a binding is specified. This must be defined by either the mapping or be implementation specific. This may change in the future.
 
 ![An entity relationship diagram of the entities in phase-2: OrgUnit, Identity, Group, Binding, RoleSpec, PermissionSpec, Role, Permission](../images/p2-iam.svg)
 

@@ -18,7 +18,7 @@ Contexts are the generic glue to structure all other elements within a large ent
 
 Contexts form a hierarchy through a parent-child relationship. An organization as a whole is described in trees of contexts, ideally only a single one, from a single root. The exact number of trees for an organization depends on the use-cases covered by the landscape of the organization.
 
-Contexts also play a vital role in ensuring proper life cycle management: As long as the deletion of a context can be detected, the deletion of all resources within that context can be processes correctly. See also the [example implementation](/docs/example-implementation/) for further information.
+Contexts also play a vital role in ensuring proper life cycle management: As long as the deletion of a context can be detected, the deletion of all resources within that context can be processed correctly. See also the [example implementation](/docs/example-implementation/) for further information.
 
 ## Rules
 
