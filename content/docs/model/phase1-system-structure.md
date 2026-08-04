@@ -14,7 +14,7 @@ weight: 20
 
 Phase 1 defines the basic structure of the overall enterprise landscape: software components that communicate over defined interfaces.
 
-Components and APIs belong to Systems, defining the fundamental building blocks a the system landscape. Systems in turn are structured hierarchical into Systems and Sub-Systems.
+Components and APIs belong to Systems, defining the fundamental building blocks of the system landscape. Systems in turn are structured hierarchical into Systems and Sub-Systems.
 
 ![An entity relationship diagram of the entities in Phase 1: System, API, Component, SystemInstance, ApiInstance, ComponentInstance](../images/p1-structure.svg)
 
@@ -27,27 +27,27 @@ Any number of Systems can be combined in a hierarchy, to model complex systems c
 For comparison, consider this somewhat more complex complete system of a [CQRS-Application](https://martinfowler.com/bliki/CQRS.html)
 
 On one side the view of the connected system instances:
-![a diagramm of the system instaces of a generic CQRS application](../images/p1_complex_system_instance_view.svg)
+![a diagram of the system instances of a generic CQRS application](../images/p1_complex_system_instance_view.svg)
 
 The instances detail the actual communication relationships between the components. They form the complete system landscape, as it is assembled when the individual systems are instantiated. And each API must have exactly one component that provides it and zero or more components that consume it. 
 The only exceptions are abstract systems, that form a black box: they only document the APIs that they provide, not their internal makeup.
 
-The other view is the list of systems. ![a diagramm of the system building blocks of a generic CQRS application](../images/p1_complex_system_system_view.svg)
+The other view is the list of systems. ![a diagram of the system building blocks of a generic CQRS application](../images/p1_complex_system_system_view.svg)
 
 They define the building blocks from which the system landscape is assembled.
 
 ## `Component` and `ComponentInstance`
 A `Component` resource represents any form of executable logic, regardless of the format (e.g. interpreted script, binary executable, container, etc.). It communicates with other components via interfaces represented via `API` resources. The APIs exposed by a component belong to the same system as the component. APIs consumed by an component may either be in the same system or a separate one.
 
-It is important to understand, that `Component` documents intent, not configuration! Consider a commonly used software like the [NGinX network proxy](http://nginx.org). Depending on configuration it may be used a authentication proxy, load balancer, cache or to as a web server, serving static files, and many more use-cases. Each use of the same basic software needs to be modelled as a separate component, potentially in it own (Sub-)System. 
+It is important to understand, that `Component` documents intent, not configuration! Consider a commonly used software like the [NGinX network proxy](http://nginx.org). Depending on configuration it may be used a authentication proxy, load balancer, cache or to as a web server, serving static files, and many more use-cases. Each use of the same basic software needs to be modelled as a separate component, potentially in its own (Sub-)System. 
 
-Tracking the exact configuration, that is required to enabled the desired behavior, is out-of-scope for EmELand. EmELand does not attempt to replace configuration management or deployment tools like [helm](https://helm.sh/) in its `values.yaml`file or the [Open Component Model](https://ocm.software/) (OCM), but rather to aggregate part of their information.
+Tracking the exact configuration, that is required to enabled the desired behavior, is out-of-scope for EmELand. EmELand does not attempt to replace configuration management or deployment tools like [helm](https://helm.sh/) in its `values.yaml` file or the [Open Component Model](https://ocm.software/) (OCM), but rather to aggregate part of their information.
 
 ### Optional Components
 
-There are no optional components within a given system. To be valid, all `Components`of a `System`have to be instantiated in a `SystemInstance`.
+There are no optional components within a given system. To be valid, all `Components` of a `System` have to be instantiated in a `SystemInstance`. This rule does not apply to sub-systems, neither directly nor transitively.
 
-But the rule set by the model does not force all subsystems to be instantiated for a given system. Thus parts of the overall complex system become optional.
+Instead, sub-system are explicitly intended to be used to model optional elements of the overall landscape or greater system. An element of the landscape can be skipped, by simply not instantiating the pertaining sub-system.
 
 ## `API` and `ApiInstance`
 
@@ -60,20 +60,20 @@ An `ApiInstance` may carry well-known `emeland.io/endpoint.*` annotations that d
 ## Rules
 
 1. Every `ComponentInstance` SHOULD have a context defined.
-1. A `System` MUST be versioned. If a given `System` has multiple current versions, a `SystemInstance` MUST indicate which version of the system it belongs to. An `SystemInstance` MAY belong to multiple version of the same System, if this is supported by the mapping and the implementation.
+1. A `System` MUST be versioned. If a given `System` has multiple current versions, a `SystemInstance` MUST indicate which version of the system it belongs to. An `SystemInstance` MAY belong to additional version of the same System, if this is supported by the internal mapping and the implementation that manages the model.
 1. An `API` SHOULD be versioned.
 1. An `Component` SHOULD be versioned
 1. A `System` with a Parent relationship set to another `System` does not require to be instantiated when the parent `System` is instantiated.
 
 ## Background
 
-The EmELand model is based on ideas from the C4 architecture model: a system having (software) components and interacting via APIs with the outside world.  For more information on C4 see its definition on [c4mode.com](https://c4model.com/). For more tools able to process C4 model information, check out [c4model.info](https://c4model.info/).
+The EmELand model is based on ideas from the C4 architecture model: a system having (software) components and interacting via APIs with the outside world.  For more information on C4 see its definition on [c4model.com](https://c4model.com/). For more tools able to process C4 model information, check out [c4model.info](https://c4model.info/).
 
 As EmELand is aimed to support managing complex IT landscapes, not develop software or software architectures, only the two top most layers are mapped into EmELand to describe the structure of the IT landscape.
 
 ### System Context
 
-The top level diagram of the C4 model ist the **System Context**. It documents how users with the elements of the system to generate value.
+The top level diagram of the C4 model is the **System Context**. It documents how users interact with the elements of the system to generate value.
 
 ### Containers
 
@@ -85,17 +85,17 @@ The C4 model has two further layers: Components and Code.
 
 You may choose to use these other layers of the C4 model. But they are not as relevant for the enterprise landscape. You may also have a different method of designing and modelling software architecture.
 
-Much more relevant is the fact that you may not have this information, if you are using proprietary software. A software vendor may even try to keep you from discovering the C4 containers, e.g. in hardware appliances. But in order to ensure control over the communication intersection  of your overall landscape, you must force vendors to give you this information.
+Much more relevant is the fact that you may not have this information, if you are using proprietary software. A software vendor may even try to keep you from discovering the C4 containers, e.g. in hardware appliances. But in order to ensure control over the communication intersection of your overall landscape, you must force vendors to give you this information.
 
 ## Using the information
 
 ### Generate the Communication Intersection
 
-The information described in the resources of phase 1 allows the easy generation of a list of APIs, and thus communication relationships, which connect the components in two sets of contexts. This is the basis for a number of thread modelling and compliance applications.
+The information described in the resources of phase 1 allows the easy generation of a list of APIs, and thus communication relationships, which connect the components in two sets of contexts. This is the basis for a number of threat modelling and compliance applications.
 
 ### Identity 
 
-By auto-discovering the running instances and mapping them to the abstract definitions an identity can be assigned, which in turn allows the direct addressing  of the instance, when analyzing deviations between plan and reality.
+By auto-discovering the running instances and mapping them to the abstract definitions an identity can be assigned, which in turn allows the direct addressing of the instance, when analyzing deviations between plan and reality.
 
 ## Areas of further Research
 
