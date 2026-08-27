@@ -32,7 +32,7 @@ But in a real environment, especially at the infrastructure level, there are ver
 
 In order to ensure that these certificates are tracked as well, EmELand uses its tracking of API endpoints to gather data on certificates. These are then analyzed for their validity period.
 
-![a diagram of components involved in the data flow for extracting and evaluating certificate validity with EmELand and OpenTelemetry](../images/uc_cert-validity.svg)
+![a diagram of components involved in the data flow for extracting and evaluating certificate validity with EmELand and OpenTelemetry](images/uc_cert-validity.svg)
 
 ## Tracking Error Budget of Services.
 
