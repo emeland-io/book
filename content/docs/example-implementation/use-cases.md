@@ -14,7 +14,7 @@ weight: 30
 
 For those starting fresh, EmELand often appears to be a confusing set of resource definitions and relationships. But how to generate actual benefits is not obvious.
 
-The following use cases are intended not only to provide examples how the use the data held within the model, but also to document the useful workflows that already have been implemented.
+The following use cases are intended not only to provide examples how to use the data held within the model, but also to document the useful workflows that already have been implemented.
 
 ## System Structure Documentation.
 
