@@ -12,7 +12,7 @@ weight: 70
 
 # Phase 6: Observability
 
-![a diagramm of the basic entities of the emeland model in the area of observability](images/p6_observability.svg)
+![a diagramm of the basic entities of the emeland model in the area of observability](../images/p6_observability.svg)
 
 
 * The `Metric` does not represent the timeseries, but rather an abstract measurement, that the administrator or developer of the overall IT system is interested in. This is analog to the Service Level Indicator (SLI) described in the [Google SRE Book (Chapter on Service Level Objectives)](https://sre.google/sre-book/service-level-objectives/)
