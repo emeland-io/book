@@ -1358,7 +1358,7 @@
                 <mxCell id="6Gnd_IBcG0fQPUIVQYnR-53" style="edgeStyle=none;html=1;" edge="1" parent="1" source="6Gnd_IBcG0fQPUIVQYnR-51" target="6Gnd_IBcG0fQPUIVQYnR-52">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="6Gnd_IBcG0fQPUIVQYnR-51" value="Value" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="6Gnd_IBcG0fQPUIVQYnR-51" value="MetricValue" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
                     <mxGeometry x="270" y="50" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="6Gnd_IBcG0fQPUIVQYnR-52" value="Metric" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
