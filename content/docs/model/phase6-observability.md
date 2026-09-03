@@ -11,3 +11,10 @@ weight: 70
 ---
 
 # Phase 6: Observability
+
+![a diagramm of the basic entities of the emeland model in the area of observability](../images/p6_observability.svg)
+
+
+* The `Metric` does not represent the timeseries, but rather an abstract measurement, that the administrator or developer of the overall IT system is interested in. This is analog to the Service Level Indicator (SLI) described in the [Google SRE Book (Chapter on Service Level Objectives)](https://sre.google/sre-book/service-level-objectives/)
+* Resources may have multiple `Threshholds` and `MetricValues`, referenced by annotations.
+* A `Threshhold` is likely to be referenced by multiple resources. And while technically possible, this is unlikely for resource to `MetricValue` references. Example: each `ApiInstance` in a scale-out system has its own value, but all share the same `Threshholds` for their four golden signals.
