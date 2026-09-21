@@ -1,0 +1,68 @@
+name: Export diagram SVGs
+
+on:
+  push:
+    paths:
+      - "content/docs/example-mapping/images/entities.drawio"
+      - "content/docs/example-mapping/images/export-map.json"
+      - "content/docs/model/images/model-entities.drawio"
+      - "content/docs/model/images/export-map.json"
+  pull_request:
+    paths:
+      - "content/docs/example-mapping/images/entities.drawio"
+      - "content/docs/example-mapping/images/export-map.json"
+      - "content/docs/model/images/model-entities.drawio"
+      - "content/docs/model/images/export-map.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    # PRs from forks get a read-only GITHUB_TOKEN with no push access to the
+    # fork, so those runs only verify the SVGs are up to date instead of
+    # committing them.
+    env:
+      IS_FORK_PR: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.ref }}
+
+      - name: Export example-mapping diagrams
+        run: |
+          python3 scripts/export_drawio_svgs.py \
+            content/docs/example-mapping/images/entities.drawio \
+            content/docs/example-mapping/images/export-map.json
+
+      - name: Export model diagrams
+        run: |
+          python3 scripts/export_drawio_svgs.py \
+            content/docs/model/images/model-entities.drawio \
+            content/docs/model/images/export-map.json
+
+      - name: Commit regenerated SVGs
+        if: env.IS_FORK_PR != 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add content/docs/example-mapping/images/*.svg content/docs/model/images/*.svg
+          if git diff --cached --quiet; then
+            echo "No SVG changes to commit."
+          else
+            git commit -m "chore: regenerate diagram SVGs"
+            git push origin HEAD:${{ github.event_name == 'pull_request' && github.event.pull_request.head.ref || github.ref_name }}
+          fi
+
+      - name: Fail if SVGs are stale (fork PRs only)
+        if: env.IS_FORK_PR == 'true'
+        run: |
+          git add content/docs/example-mapping/images/*.svg content/docs/model/images/*.svg
+          if ! git diff --cached --quiet; then
+            echo "::error::Diagram SVGs are stale. Please re-export locally and commit."
+            git diff --cached --stat
+            exit 1
+          fi

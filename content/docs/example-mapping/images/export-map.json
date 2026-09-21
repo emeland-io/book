@@ -1,0 +1,10 @@
+{
+  "Execution Environment": "execution_environment.svg",
+  "P0: Context": "p0-contexts.svg",
+  "P1: Structure": "p1-structure.svg",
+  "P2: IAM": "p2-iam.svg",
+  "P3: Capabilities": "p3-capabilities.svg",
+  "P5: Risk": "p5-risk.svg",
+  "P6: Observability": "p6-observability.svg",
+  "P7: Capacity": "p7-capacity.svg"
+}

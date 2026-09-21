@@ -1,0 +1,13 @@
+{
+  "P0: Context": "p0-contexts.svg",
+  "p1: Structure": "p1-structure.svg",
+  "p1: API Example": "api-example.svg",
+  "p1 complex system (System View)": "p1_complex_system_system_view.svg",
+  "p1 complex system (Instance View)": "p1_complex_system_instance_view.svg",
+  "p2: IAM": "p2-iam.svg",
+  "p3: Capabilities": "p3-capabilities.svg",
+  "p5: Risk": "p5-risk.svg",
+  "p6: Observability": "p6_observability.svg",
+  "p7: Capacity": "p7-capacity.svg",
+  "p8: Data Catalog": "p8-data-catalog.svg"
+}
