@@ -19,7 +19,7 @@ variables:
 
 
 image:
-  name: golang:1.25.5-bookworm
+  name: golang:1.27.4-bookworm
 
 secret_detection:
   stage: secret-detection
